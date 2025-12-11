@@ -85,6 +85,11 @@ export default function UpperNav() {
                   <i className="fa fa-user"></i> حسابي
                 </Link>
               </li>
+              <li>
+                <Link to={'/logoutconfirm'} className="tn-mobile-item">
+                  <i className="fa fa-sign-out"></i> تسجيل الخروج
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
