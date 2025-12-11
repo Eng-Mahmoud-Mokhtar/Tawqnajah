@@ -52,6 +52,14 @@
   gap: 2px;
 }
 
+/* default: hide mobile-specific wrappers on desktop */
+.tn-menu-btn {
+  display: none;
+}
+.tn-mobile-wrapper {
+  display: none;
+}
+
 .tn-nav-icon {
   font-size: 18px;
   color: #0c317a;
@@ -100,18 +108,21 @@
 
 /* Mobile behavior: hide desktop controls and show menu button */
 @media (max-width: 767px) {
-  .tn-search-box {
-    display: none;
-  }
-
+  /* hide desktop elements */
+  .tn-search-box,
   .tn-left-icons {
-    display: none;
+    display: none !important;
   }
 
-  .tn-nav-logo {
-    width: 28%;
+  /* show mobile wrapper/menu */
+  .tn-mobile-wrapper {
+    display: block;
+    position: relative;
+    order: 2;
+    margin-left: 8px;
   }
 
+  /* show hamburger */
   .tn-menu-btn {
     display: inline-flex;
     align-items: center;
@@ -123,8 +134,9 @@
     cursor: pointer;
   }
 
-  .tn-mobile-wrapper {
-    position: relative;
+  .tn-nav-logo {
+    width: 40%;
+    order: 1;
   }
 
   .tn-mobile-menu {
