@@ -98,6 +98,87 @@
   }
 }
 
+/* Mobile behavior: hide desktop controls and show menu button */
+@media (max-width: 767px) {
+  .tn-search-box {
+    display: none;
+  }
+
+  .tn-left-icons {
+    display: none;
+  }
+
+  .tn-nav-logo {
+    width: 28%;
+  }
+
+  .tn-menu-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    color: #0c317a;
+    cursor: pointer;
+  }
+
+  .tn-mobile-wrapper {
+    position: relative;
+  }
+
+  .tn-mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 220px;
+    background: #fff;
+    border: 1px solid #eee;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    padding: 10px;
+    border-radius: 6px;
+    z-index: 20000;
+  }
+
+  .tn-mobile-menu.open {
+    display: block;
+  }
+
+  .tn-mobile-search input {
+    width: 100%;
+    padding: 8px 34px 8px 10px;
+    border-radius: 20px;
+    border: 1px solid #eee;
+    background: #fafafa;
+    outline: none;
+  }
+
+  .tn-mobile-list {
+    list-style: none;
+    padding: 8px 0 0 0;
+    margin: 0;
+  }
+
+  .tn-mobile-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    text-align: right;
+    background: transparent;
+    border: none;
+    padding: 8px 6px;
+    color: #0c317a;
+    cursor: pointer;
+    font-size: 15px;
+  }
+
+  .tn-mobile-item i {
+    font-size: 16px;
+  }
+}
+
 @media (min-width: 1024px) {
   .tn-uppernav {
     top: -10px;

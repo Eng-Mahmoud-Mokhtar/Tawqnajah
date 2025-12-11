@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Container } from "react-bootstrap";
 import "../Uppernav/Uppernav.css";
 import cartnav from "../../assets/cartnav.png";
@@ -6,6 +6,19 @@ import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 
 export default function UpperNav() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setMenuOpen(false);
+      }
+    }
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
+
   return (
     <div className="tn-uppernav">
       <div className="tn-uppernav-wrapper px-2 px-md-4">
@@ -37,6 +50,43 @@ export default function UpperNav() {
           <Link to={"/profileaccount"}>
             <i className="fa fa-user tn-nav-icon"></i>
           </Link>
+        </div>
+
+        {/* Mobile menu button */}
+        <div className="tn-mobile-wrapper" ref={menuRef}>
+          <button
+            className="tn-menu-btn"
+            aria-label="Open menu"
+            aria-expanded={menuOpen}
+            onClick={(e) => {
+              e.stopPropagation();
+              setMenuOpen((s) => !s);
+            }}
+          >
+            <i className="fa fa-bars"></i>
+          </button>
+
+          <div className={`tn-mobile-menu ${menuOpen ? 'open' : ''}`}>
+            <div className="tn-mobile-search">
+              <input type="text" placeholder="البحث عن المنتج" />
+              <i className="fa fa-search tn-search-icon"></i>
+            </div>
+            <ul className="tn-mobile-list">
+              <li>
+                <button className="tn-mobile-item">EN</button>
+              </li>
+              <li>
+                <button className="tn-mobile-item">
+                  <i className="fa fa-bell"></i> الإشعارات
+                </button>
+              </li>
+              <li>
+                <Link to={'/profileaccount'} className="tn-mobile-item">
+                  <i className="fa fa-user"></i> حسابي
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
