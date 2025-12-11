@@ -1,6 +1,6 @@
 import './App.css';
 
-import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
+import { createHashRouter, Navigate, RouterProvider } from 'react-router-dom';
 
 import Login from './component/Login/Login';
 import Layout from './component/Layout/Layout';
@@ -130,7 +130,7 @@ import AllProductsByCategory from './component/AllProductsByCategory/AllProducts
 import Privacy from './component/Privacy/Privacy';
 
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
     element: <Layout />,
