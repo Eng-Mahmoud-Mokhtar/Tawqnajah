@@ -1,0 +1,8 @@
+.morerelated{
+    margin-top: 12%;
+}
+@media (max-width: 768px) {
+    .morerelated{
+    margin-top: 100%;
+}
+}

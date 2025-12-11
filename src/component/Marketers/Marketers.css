@@ -1,0 +1,61 @@
+.marketers-page {
+  background: #f5f5f7;
+  direction: rtl;
+  margin-top: 10%;
+}
+
+.marketers-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.marketers-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.marketers-desc {
+    color: #534b4b;
+    font-size: 15px;
+    font-weight: bold;
+}
+.marketsection-title {
+  margin-top: 25px;
+  font-weight: bold;
+  color: #1d3a77;
+}
+
+.terms-list {
+    padding-right: 20px;
+    font-size: 17px;
+    color: #444;
+}
+
+.confirm-box {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.marketersave-btn {
+  background: #1d3a77;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 10px;
+}
+
+input.form-control {
+  border-radius: 12px;
+  height: 50px;
+  background: #f9f9f9;
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .marketers-card {
+    margin-top: 14%;
+  }
+  
+}

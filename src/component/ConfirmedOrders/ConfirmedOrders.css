@@ -1,0 +1,144 @@
+/* الميل العام للصفحة */
+.orders-page {
+  padding-top: 180px; /* علشان الهيدر */
+}
+.orders-page .container{
+      max-width: 80%;
+    margin: auto;
+    padding: 0 27px;
+    direction: rtl;
+}
+/* يمين الصفحة */
+.orders-right-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+    max-width: 260px;
+    margin-top: 48px;
+    padding: 2px;
+}
+
+/* شكل كل زر */
+.cright-tab {
+    background: #fff;
+    border: 1px solid #E9E9E9;
+    padding: 16px 20px;
+    border-radius: 12px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    text-align: right;
+    color: #000;
+
+}
+
+.cright-tab.active {
+font-weight: bold;
+    background: #1D3A77;
+    color: #fff;
+    border-color: #1D3A77;
+    font-size: 24px;
+    padding: 18px 22px;
+    text-align: right;
+}
+.corder-mobile-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 18px 18px 16px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #E9E9E9;
+    margin-bottom: 25px;
+}
+
+.order-mobile-img {
+  width: 95px;
+  height: 95px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.order-mobile-content {
+  flex: 1;
+  padding-right: 15px;
+}
+
+.corder-mobile-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.corder-mobile-desc {
+    font-size: 20px;
+    color: #9E9E9E;
+    margin-bottom: 12px;
+    font-weight: 400;
+}
+
+.order-bottom-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.order-badge {
+  background: #ededed;
+  padding: 5px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.corder-type{
+ font-size: 18px;
+    color: #000;
+    font-weight: 400;
+}
+
+.order-price {
+  margin-right: auto;
+  color: #F38B1B;
+  font-size: 18px;
+  font-weight: bold;
+}
+@media (max-width: 576px) {
+  .tabssection{
+    display: block;
+  }
+}
+@media screen and (max-width:767px){
+
+.orders-right-tabs .cright-btn{
+          font-size: 19px;
+          margin-top:46%;
+
+}
+.orders-right-tabs .cright-btn2{
+          font-size: 19px;
+          margin-top: 3%;
+}
+.orders-right-tabs .cright-btn3{
+          font-size: 19px;
+          margin-top: 3%;
+}
+.corder-mobile-card {
+     display: block
+; 
+    /* align-items: center; */
+    justify-content: center;
+    background: #fff;
+    padding: 0px 23px 33px 24px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #E9E9E9;
+    /* margin-bottom: 14px; */
+    /* position: absolute; */
+    bottom: 13%;
+    height: 46%;
+    width: 102%;
+    text-align: center;
+    /* position: absolute; */
+}
+}

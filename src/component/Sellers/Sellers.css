@@ -1,0 +1,67 @@
+.sellers-page {
+  padding: 180px 20px;
+  background: #f6f6f6;
+  direction: rtl;
+  text-align: center;
+}
+
+.sellers-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #1d3a77;
+}
+
+.sellers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.seller-card {
+  background: #fff;
+  padding: 25px 15px;
+  border-radius: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.seller-card:hover {
+  transform: translateY(-6px);
+}
+
+.seller-card img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.seller-card h4 {
+  font-size: 17px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.seller-card p {
+  font-size: 21px;
+  color: #000;
+  font-weight: 500;
+}
+
+/* ريسبونسيف */
+@media (max-width: 992px) {
+  .sellers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .sellers-grid {
+    grid-template-columns: 1fr;
+  }
+}
