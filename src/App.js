@@ -159,7 +159,6 @@ const router = createHashRouter([
 { path: 'productlist', element: <ProductList /> },
 { path: 'productcard', element: <ProductCard /> },
 { path: 'product/:id', element: <ProductDetails /> },
-{ path: 'product/:id', element: <ProductDetails /> },    // ← مصححة
 { path: 'canceledorders', element: <CanceledOrders /> },
 { path: 'mystore', element: <MyStore /> },
 { path: 'neworders', element: <NewOrders /> },

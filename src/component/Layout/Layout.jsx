@@ -22,7 +22,7 @@ export default function Layout() {
 
   return (
     <>
-      {!hideLayout && <UpperNav />}
+      {!hideLayout && <UpperNav isSeller={false} />}
       {!hideLayout && <Navbar />}
 
       <Outlet />

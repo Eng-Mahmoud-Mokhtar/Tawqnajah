@@ -6,7 +6,7 @@
 }
 body {
   margin: 0;
-
+  direction: rtl;
   font-family: "Tajawal", sans-serif;
 }
 

@@ -38,6 +38,7 @@
 .tn-nav-logo {
   width: 20%;
   margin-top: 0;
+  max-width: 150px;
 }
 
 .tn-search-box {
@@ -48,9 +49,10 @@
 
 .tn-search-box i {
   position: absolute;
-  right: 10px;
+  right: 15px;
   top: 50%;
   transform: translateY(-50%);
+  font-size: 14px;
 }
 
 .tn-search-box input {
@@ -82,6 +84,59 @@
   font-size: 18px;
   color: #0c317a;
   cursor: pointer;
+}
+
+/* Desktop dropdown */
+.tn-nav-dropdown {
+  position: relative;
+}
+
+.tn-nav-dropdown-btn {
+  background: #ffe8e1;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #0c317a;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.tn-nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 200px;
+  z-index: 1000;
+}
+
+.tn-nav-dropdown-menu li {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.tn-nav-dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.tn-nav-dropdown-menu a {
+  display: block;
+  padding: 10px 15px;
+  color: #0c317a;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.tn-nav-dropdown-menu a:hover {
+  background: #f8f9fa;
 }
 
 .tn-lang-btn {
@@ -125,24 +180,28 @@
 }
 
 /* Mobile behavior: hide desktop controls and show menu button */
-@media (max-width: 767px) {
-  /* hide desktop elements */
-  .tn-search-box,
-  .tn-left-icons {
-    display: none !important;
-    visibility: hidden !important;
-    height: 0 !important;
-    overflow: hidden !important;
-    padding: 0 !important;
-    margin: 0 !important;
+@media (max-width: 1024px) {
+  /* hide search box */
+  .tn-search-box {
+    display: none;
   }
 
-  /* show mobile wrapper/menu */
+  /* hide bell icon, show language, cart, profile */
+  .tn-hidden-mobile {
+    display: none !important;
+  }
+
+  .tn-visible-mobile {
+    display: flex !important;
+  }
+
+  /* show fixed menu button */
   .tn-mobile-wrapper {
     display: block;
-    position: relative;
-    order: 2;
-    margin-left: 8px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 10001;
   }
 
   /* show hamburger */
@@ -150,85 +209,107 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: transparent;
-    border: none;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 8px;
     font-size: 22px;
     color: #0c317a;
     cursor: pointer;
-  }
-
-  .tn-nav-logo {
-    width: auto !important;
-    max-width: 40% !important;
-    order: 1;
-  }
-
-  /* ensure header doesn't grow too tall on mobile */
-  .tn-uppernav {
-    height: auto;
-    padding: 8px 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   }
 
   .tn-mobile-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    min-width: 220px;
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 280px;
+    height: 100vh;
     background: #fff;
-    border: 1px solid #eee;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    padding: 10px;
-    border-radius: 6px;
-    z-index: 20000;
+    border-left: 1px solid #eee;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    transition: right 0.3s ease;
+    z-index: 10002;
+    overflow-y: auto;
   }
 
   .tn-mobile-menu.open {
-    display: block;
+    right: 0;
   }
 
   .tn-mobile-search input {
     width: 100%;
-    padding: 8px 34px 8px 10px;
+    padding: 10px 40px 10px 10px;
     border-radius: 20px;
     border: 1px solid #eee;
     background: #fafafa;
     outline: none;
+    margin-bottom: 20px;
   }
 
   .tn-mobile-list {
     list-style: none;
-    padding: 8px 0 0 0;
+    padding: 0;
     margin: 0;
   }
 
   .tn-mobile-item {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     width: 100%;
     text-align: right;
     background: transparent;
     border: none;
-    padding: 8px 6px;
+    padding: 12px 10px;
     color: #0c317a;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 16px;
+    border-radius: 6px;
+    transition: background 0.2s;
+  }
+
+  .tn-mobile-item:hover {
+    background: #f8f9fa;
   }
 
   .tn-mobile-item i {
-    font-size: 16px;
+    font-size: 18px;
+  }
+
+  /* logout specific style */
+  .tn-mobile-logout {
+    color: #d93025; /* red */
+    font-weight: 700;
+  }
+
+  /* overlay when menu is open */
+  .tn-mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    z-index: 10001;
+    display: none;
+  }
+
+  .tn-mobile-overlay.open {
+    display: block;
   }
 }
 
 @media (min-width: 1024px) {
   .tn-uppernav {
-    top: -10px;
-    height: 92px;
+    top: 0px;
+    height: 80px;
   }
 
   .tn-nav-logo {
     width: 10%;
+    margin-bottom: 10px; /* Add padding below logo on large screens */
   }
 }
 

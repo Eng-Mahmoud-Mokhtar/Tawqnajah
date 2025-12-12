@@ -102,8 +102,8 @@ export default function OffersTawq() {
       price: 250,
       discount: 20,
     },
-    
-    
+
+
   ];
 
   return (
@@ -152,10 +152,10 @@ export default function OffersTawq() {
           <div className="col-md-9 mt-5 shopping-left">
 
             <div className="breadcrumb">
-                  
+
                     <h1 className="hpart1 fw-bold ">  عروض طوق نجاة /
                     <span className="hpart2 px-2">الرئيسية</span>
-                    </h1> 
+                    </h1>
             </div>
 
             <p className="results">النتيجة 1 - 12 من 214526</p>
@@ -176,7 +176,7 @@ export default function OffersTawq() {
             <div className="customer-products-grid">
               {products.map((p) => (
                 <div className="customer-product-card" key={p.id}>
-                  
+
                   <div className="customer-discount">{p.discount}%</div>
 
                   <img src={p.img} className="customer-product-img" alt="product" />

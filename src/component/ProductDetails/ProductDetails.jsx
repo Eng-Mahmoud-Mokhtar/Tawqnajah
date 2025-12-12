@@ -57,7 +57,7 @@ export default function ProductDetails() {
   ];
 
   const { id } = useParams();
-  const product = products.find((item) => item.id == id);
+  const product = products.find((item) => item.id === parseInt(id));
 
   // ✅ Hooks لازم تيجي قبل أي شرط
   const images = product ? [product.img] : [];
