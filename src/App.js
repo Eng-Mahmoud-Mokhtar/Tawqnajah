@@ -1,6 +1,6 @@
 import './App.css';
 
-import { createHashRouter, Navigate, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 
 import Login from './component/Login/Login';
 import Layout from './component/Layout/Layout';
@@ -128,9 +128,14 @@ import SellersDetails from './component/SellersDetails/SellersDetails';
 import AllOffers from './component/AllOffers/AllOffers';
 import AllProductsByCategory from './component/AllProductsByCategory/AllProductsByCategory';
 import Privacy from './component/Privacy/Privacy';
+import NotFound from './component/NotFound/NotFound';
 
 
 const routes = [
+  {
+    path: '/Tawqnajah',
+    element: <Navigate to="/" replace />
+  },
   {
     path: '/',
     element: <Layout />,
@@ -216,7 +221,8 @@ const routes = [
 {path:'/sellers/:id',element:<SellersDetails/>},
 {path:'alloffers',element:<AllOffers/>},
 {path:'/products/:category',element:<AllProductsByCategory/>},
-{path:'privacy',element:<Privacy/>}
+{path:'privacy',element:<Privacy/>},
+{ path: '*', element: <NotFound /> }
 
     ],
   },
@@ -280,9 +286,9 @@ const routes = [
       { path:'/seller/sellerabouttawq',element:<SellerAbouttawq/> },
     ],
     },
-]);
+];
 
-const router = createHashRouter(routes, { basename: "/Tawqnajah" });
+const router = createBrowserRouter(routes);
 
 function App() {
   return <RouterProvider router={router} />;

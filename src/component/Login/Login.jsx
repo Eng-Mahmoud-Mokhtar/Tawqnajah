@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Login.css";
 import logo from "../../assets/logo.png";
-import loginbg from "../../assets/sidelogo.png";
+import loginbg from "../../assets/customerbanner.jpg";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
