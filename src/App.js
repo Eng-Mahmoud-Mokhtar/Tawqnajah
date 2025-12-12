@@ -130,7 +130,7 @@ import AllProductsByCategory from './component/AllProductsByCategory/AllProducts
 import Privacy from './component/Privacy/Privacy';
 
 
-const router = createHashRouter([
+const routes = [
   {
     path: '/',
     element: <Layout />,
@@ -282,7 +282,7 @@ const router = createHashRouter([
     },
 ]);
 
-
+const router = createHashRouter(routes, { basename: "/Tawqnajah" });
 
 function App() {
   return <RouterProvider router={router} />;
