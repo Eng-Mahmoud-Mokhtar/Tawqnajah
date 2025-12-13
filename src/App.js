@@ -133,10 +133,6 @@ import NotFound from './component/NotFound/NotFound';
 
 const routes = [
   {
-    path: '/Tawqnajah',
-    element: <Navigate to="/" replace />
-  },
-  {
     path: '/',
     element: <Layout />,
     children: [
@@ -288,7 +284,9 @@ const routes = [
     },
 ];
 
-const router = createBrowserRouter(routes);
+const router = createBrowserRouter(routes, {
+  basename: '/Tawqnajah',
+});
 
 function App() {
   return <RouterProvider router={router} />;
