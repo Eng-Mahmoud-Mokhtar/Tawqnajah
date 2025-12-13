@@ -31,6 +31,8 @@
     "start": "react-scripts start",
     "dev": "react-scripts start",
     "build": "react-scripts build",
+    "sync-pages": "node scripts/sync-pages.mjs",
+    "build:pages": "npm run build && npm run sync-pages",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
