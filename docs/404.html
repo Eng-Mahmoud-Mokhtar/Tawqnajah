@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="refresh" content="0; url=/Tawqnajah/" />
+    <script>
+      // GitHub Pages SPA fallback:
+      // When a user refreshes /Tawqnajah/some/route, Pages returns 404.
+      // This file rewrites the URL into a query string so the SPA can restore it.
+      (function () {
+        var l = window.location;
+        var repo = '/Tawqnajah';
+        var path = l.pathname;
+        if (path.startsWith(repo)) {
+          path = path.slice(repo.length);
+        }
+        var newUrl = repo + '/?p=' + encodeURIComponent(path + l.search + l.hash);
+        l.replace(newUrl);
+      })();
+    </script>
+    <title>Redirecting…</title>
+  </head>
+  <body>
+    Redirecting…
+  </body>
+</html>
