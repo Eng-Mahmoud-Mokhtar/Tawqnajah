@@ -277,7 +277,7 @@
 
 .shop-btn {
   display: flex;
-  align-items: start;
+  align-items: center;
   width: 100%;
   gap: 10px;
   background: #1d3a77;
