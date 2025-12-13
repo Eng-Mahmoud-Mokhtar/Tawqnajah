@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Tawqnajah/static/css/main.91434074.css",
+    "main.css": "/Tawqnajah/static/css/main.07fc34b5.css",
     "main.js": "/Tawqnajah/static/js/main.eaa1e6d3.js",
     "static/js/488.00f1a90a.chunk.js": "/Tawqnajah/static/js/488.00f1a90a.chunk.js",
     "static/media/sale-friday.jpg": "/Tawqnajah/static/media/sale-friday.8a50cfbeafe8e4c5fc53.jpg",
@@ -71,12 +71,12 @@
     "static/media/fa-v4compatibility.woff2": "/Tawqnajah/static/media/fa-v4compatibility.e4340c52a50e727c6afa.woff2",
     "static/media/cartsvg.svg": "/Tawqnajah/static/media/cartsvg.a4dcf7dabd6612aa2a07524a98eff94f.svg",
     "index.html": "/Tawqnajah/index.html",
-    "main.91434074.css.map": "/Tawqnajah/static/css/main.91434074.css.map",
+    "main.07fc34b5.css.map": "/Tawqnajah/static/css/main.07fc34b5.css.map",
     "main.eaa1e6d3.js.map": "/Tawqnajah/static/js/main.eaa1e6d3.js.map",
     "488.00f1a90a.chunk.js.map": "/Tawqnajah/static/js/488.00f1a90a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.91434074.css",
+    "static/css/main.07fc34b5.css",
     "static/js/main.eaa1e6d3.js"
   ]
 }
