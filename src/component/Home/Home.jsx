@@ -99,8 +99,6 @@ export default function Home() {
               <i className="fa-solid fa-arrow-left ms-2"></i>
             </button>
             <p className="btn-text">شاهد جميع المنتجات</p>
-
-
           </div>
 
           {/* التقييم */}
