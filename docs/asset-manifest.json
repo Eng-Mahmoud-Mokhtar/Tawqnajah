@@ -1,11 +1,10 @@
 {
   "files": {
-    "main.css": "/Tawqnajah/static/css/main.07fc34b5.css",
-    "main.js": "/Tawqnajah/static/js/main.69d7b9d2.js",
+    "main.css": "/Tawqnajah/static/css/main.d97bd4cf.css",
+    "main.js": "/Tawqnajah/static/js/main.ec3322ea.js",
     "static/js/488.00f1a90a.chunk.js": "/Tawqnajah/static/js/488.00f1a90a.chunk.js",
     "static/media/sale-friday.jpg": "/Tawqnajah/static/media/sale-friday.8a50cfbeafe8e4c5fc53.jpg",
     "static/media/banner-bg.png": "/Tawqnajah/static/media/banner-bg.8b32f8d9936c1e5945ab.png",
-    "static/media/offers-banner.jpg": "/Tawqnajah/static/media/offers-banner.e813e907c9beb19651b6.jpg",
     "static/media/footer-logo.png": "/Tawqnajah/static/media/footer-logo.e1880ea71624f097656b.png",
     "static/media/mobile.jpg": "/Tawqnajah/static/media/mobile.e6aab34e2de4b3f40af4.jpg",
     "static/media/register-bg.png": "/Tawqnajah/static/media/register-bg.70e1a95eb6ffaa269db3.png",
@@ -71,12 +70,12 @@
     "static/media/fa-v4compatibility.woff2": "/Tawqnajah/static/media/fa-v4compatibility.e4340c52a50e727c6afa.woff2",
     "static/media/cartsvg.svg": "/Tawqnajah/static/media/cartsvg.a4dcf7dabd6612aa2a07524a98eff94f.svg",
     "index.html": "/Tawqnajah/index.html",
-    "main.07fc34b5.css.map": "/Tawqnajah/static/css/main.07fc34b5.css.map",
-    "main.69d7b9d2.js.map": "/Tawqnajah/static/js/main.69d7b9d2.js.map",
+    "main.d97bd4cf.css.map": "/Tawqnajah/static/css/main.d97bd4cf.css.map",
+    "main.ec3322ea.js.map": "/Tawqnajah/static/js/main.ec3322ea.js.map",
     "488.00f1a90a.chunk.js.map": "/Tawqnajah/static/js/488.00f1a90a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.07fc34b5.css",
-    "static/js/main.69d7b9d2.js"
+    "static/css/main.d97bd4cf.css",
+    "static/js/main.ec3322ea.js"
   ]
 }
