@@ -19,7 +19,7 @@ export default function AccountType() {
     if (selected === "buyer") {
       navigate("/register");          // صفحة تسجيل المشتري
     } else if (selected === "seller") {
-      navigate("/sellerregister");    // صفحة تسجيل البائع
+      navigate("/seller/sellerregister");    // صفحة تسجيل البائع
     }
   };
 

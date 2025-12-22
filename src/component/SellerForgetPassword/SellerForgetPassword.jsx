@@ -19,7 +19,7 @@ export default function SellerForgetPassword() {
     .then((res)=>{
       console.log("SUCCESS", res.data);
       localStorage.setItem("resetEmail", email);
-      navigate("/otpres");
+      navigate("/seller/sellerresetpassword");
     })
     .catch((err)=>{
       if(err.response?.data?.errors){

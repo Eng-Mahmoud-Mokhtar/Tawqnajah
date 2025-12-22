@@ -2,15 +2,16 @@
 
 .tn-nav-main {
   background: #1d3a77;
-  padding: 14px 20px;
+  padding: 0 20px;
   width: 100%;
   position: fixed;
-  top: 81px;
+  top: 96px;
   left: 0;
   z-index: 10001;
-  height: 75px;
+  height: 86px;
   display: flex;
   align-items: center;
+  box-shadow: 0 6px 18px rgba(2, 16, 43, 0.18);
 }
 
 .tn-nav-wrapper {
@@ -19,12 +20,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
+  margin: 0 auto;
 }
 
 .tn-buttons-box {
   display: flex;
   align-items: center;
   gap: 10px;
+  height: 100%;
 }
 
 .tn-nav-app-btn {
@@ -42,18 +46,28 @@
   background: linear-gradient(90deg, #000000, #91b4ff);
   color: #fff;
   border: none;
-  padding: 8px 20px;
+  /* Make the button feel solid (not thin) and keep it centered */
+  height: 44px;
+  /* Keep top/bottom internal space equal */
+  padding: 0 18px;
+  /* extra space above the download button only */
+  margin-top: 10px;
   border-radius: 30px;
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 600;
   cursor: pointer;
-  width: 180px;
+  width: auto;
+  min-width: 170px;
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 8px;
   text-align: right;
+  white-space: nowrap;
+  line-height: normal;
+  align-self: center;
+  box-sizing: border-box;
 }
 
 .tn-nav-download-app i {
@@ -65,8 +79,11 @@
 .tn-nav-links {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 18px;
   direction: rtl;
+  flex-wrap: nowrap;
+  /* add a bit more space above links only */
+  margin-top: 6px;
 }
 
 .tn-nav-link {
@@ -75,16 +92,91 @@
   font-weight: 600;
   text-decoration: none;
   position: relative;
+  opacity: 0.92;
+  padding: 6px 2px;
+  transition: opacity 0.2s ease;
+}
+
+/* Some bootstrap/nav styles add their own active underline/border (often looks orange-ish).
+   We explicitly disable those so only our white ::after underline remains. */
+.tn-nav-links .tn-nav-link.active,
+.tn-nav-links .tn-nav-link:focus,
+.tn-nav-links .tn-nav-link:active {
+  border-bottom: 0 !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+}
+
+.tn-nav-link:hover {
+  opacity: 1;
+  background: transparent;
 }
 
 .tn-nav-link.active::after {
   content: "";
   position: absolute;
+  /* Keep only a single bottom underline (the white one at the very bottom) */
   bottom: -14px;
   left: 0;
   width: 100%;
-  height: 2.5px;
-  background: #fff;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .tn-nav-main {
+    padding: 0 14px;
+    height: 70px;
+  }
+
+  .tn-nav-links {
+    margin-top: 6px;
+  }
+
+  .tn-nav-download-app {
+    min-width: 150px;
+    height: 42px;
+    /* keep vertical padding = 0 on phones */
+    padding: 0 14px;
+    margin-top: 0;
+    margin-bottom: 4px;
+    font-size: 13px;
+    line-height: normal;
+  }
+}
+
+/* Extra small phones: reduce top spacing and button size so it doesn't look "too padded" */
+@media (max-width: 360px) {
+  .tn-nav-main {
+    height: 62px;
+  }
+
+  .tn-nav-download-app {
+    min-width: 128px;
+    height: 38px;
+    /* user request: padding on phones = 0 (vertical) */
+    padding: 0 10px;
+    margin-top: 0;
+    margin-bottom: 2px;
+    font-size: 12.5px;
+  }
+}
+
+/* Smallest common phones (e.g. 320px wide) */
+@media (max-width: 320px) {
+  .tn-nav-main {
+    height: 60px;
+  }
+
+  .tn-nav-download-app {
+    min-width: 120px;
+    height: 36px;
+    padding: 0 8px;
+    margin-top: 0;
+    margin-bottom: 2px;
+    font-size: 12px;
+  }
 }
 
 /* =============== HAMBURGER =============== */
@@ -115,6 +207,12 @@
 
   .tn-nav-hamburger {
     display: block;
+  }
+
+  /* On phones/tablets, show the download action at the bottom (sidebar button)
+     and hide the top download button to avoid crowding. */
+  .tn-buttons-box {
+    display: none;
   }
 
 

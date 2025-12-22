@@ -1,13 +1,13 @@
 .tn-uppernav {
   width: 100%;
   background: #ffffff;
-  padding: 8px 0;
+  padding: 10px 0 14px;
   position: fixed;
   top: 0px;
   z-index: 10000;
-  border-bottom: 1px solid #eee;
+  border-bottom: 0;
   direction: rtl;
-  height: 80px;
+  height: 96px;
 }
 
 .tn-uppernav-wrapper {
@@ -35,16 +35,25 @@
   flex: 0 0 auto;
 }
 
+/* Logo: keep it stable while resizing (no sudden grow/shrink) */
 .tn-nav-logo {
-  width: 20%;
-  margin-top: 0;
+  flex: 0 0 auto;
+  width: auto;
   max-width: 150px;
+  height: 44px;
+  object-fit: contain;
+  margin: 0;
 }
 
 .tn-search-box {
   width: 30%;
   position: relative;
   margin-top: 8px;
+}
+
+/* Ensure the upper header never overlaps the blue navbar below */
+.tn-uppernav-wrapper {
+  min-height: calc(96px - 10px - 14px);
 }
 
 .tn-search-box i {
@@ -151,12 +160,10 @@
 @media (min-width: 768px) {
   .tn-uppernav {
     top: 0px;
-    height: 80px;
+    height: 96px;
   }
 
-  .tn-nav-logo {
-    width: 12%;
-  }
+  .tn-nav-logo { height: 46px; max-width: 170px; }
 
   .tn-search-box {
     width: 45%;
@@ -202,6 +209,17 @@
     top: 10px;
     right: 10px;
     z-index: 10001;
+  }
+
+  /* On tablets/mobiles, keep header height consistent so nothing drops into the blue bar */
+  .tn-uppernav {
+    height: 74px;
+    padding: 10px 0;
+  }
+
+  .tn-nav-logo {
+    height: 40px;
+    max-width: 150px;
   }
 
   /* show hamburger */
@@ -304,17 +322,12 @@
 @media (min-width: 1024px) {
   .tn-uppernav {
     top: 0px;
-    height: 80px;
+    height: 96px;
   }
 
-  .tn-nav-logo {
-    width: 10%;
-    margin-bottom: 10px; /* Add padding below logo on large screens */
-  }
+  .tn-nav-logo { height: 46px; }
 }
 
 @media (min-width: 1440px) {
-  .tn-nav-logo {
-    width: 7%;
-  }
+  .tn-nav-logo { height: 50px; max-width: 190px; }
 }

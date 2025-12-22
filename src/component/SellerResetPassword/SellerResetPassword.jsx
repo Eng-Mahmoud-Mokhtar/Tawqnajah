@@ -24,7 +24,7 @@ export default function SellerResetPassword() {
     })
     .then((res)=>{
       console.log("RESET SUCCESS ✅", res.data);
-      navigate("/seller/Sellerlogin");
+      navigate("/seller/sellerlogin");
     })
     .catch((err)=>{
       console.log(err);

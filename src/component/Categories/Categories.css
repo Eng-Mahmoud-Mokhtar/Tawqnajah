@@ -1,5 +1,6 @@
 .customer-categories-section {
-  margin-top: 60px;
+  margin-top: 32px;
+  margin-bottom: 10px;
   direction: rtl;
 }
 
@@ -44,7 +45,19 @@
   font-size: 20px;
   cursor: pointer;
   transition: 0.3s ease;
-  margin-bottom: 30px;
+  margin-bottom: 14px;
+}
+
+/* Mobile: keep spacing comfortable but still tighter than before */
+@media (max-width: 767px) {
+  .customer-categories-section {
+    margin-top: 22px;
+    margin-bottom: 6px;
+  }
+
+  .customer-category-box {
+    margin-bottom: 12px;
+  }
 }
 
 .customer-category-box:hover {

@@ -22,7 +22,7 @@ export default function Categories() {
   ];
 
   return (
-    <div className="customer-categories-section mt-5">
+    <div className="customer-categories-section">
       <div className="container">
 
         <h2 className="customer-categories-title">الفئات</h2>

@@ -17,12 +17,6 @@ body {
 
 /* BLOCK 1 – erste Version (deine neuen Werte) */
 @media (max-width: 480px) {
-  .tn-nav-main {
-    /* top: 0 !important; */
-    height: 80px !important;
-    background: #1d3a77;
-  }
-
   .customer-products-grid {
     margin-top: 140px !important;
   }
@@ -60,11 +54,6 @@ body {
     margin: 342px 0 !important;
   }
 
-  .tn-nav-main {
-    height: 10%;
-    width: 100%;
-  }
-
   .cards-wrapper {
     margin-top: 15% !important;
   }
@@ -81,10 +70,6 @@ body {
 
 /* ================= TABLET (≤768px) =================== */
 @media (max-width: 768px) {
-  .tn-nav-main {
-    height: 70px;
-  }
-
   .tn-nav-links {
     gap: 20px;
   }
@@ -100,10 +85,8 @@ body {
   .customer-products-grid.productssection {
     margin-top: 0px !important;
   }
-  .tn-nav-logo {
-    width: 26%;
-    margin-top: 19px;
-  }
+  /* NOTE: Logo sizing is handled in `Uppernav/Uppernav.css`.
+     Keeping global overrides here causes the logo to jump in size/position while resizing. */
 }
 
 /* ================= ≥820px ============================ */

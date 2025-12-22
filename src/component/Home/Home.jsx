@@ -3,7 +3,6 @@ import lock from "../../assets/lock-icon.png";
 import shopbtn from "../../assets/shop-arrow.png";
 import avatar from "../../assets/rateproduct.png";
 import "./Home.css";
-import offerbanner from "../../assets/offers-banner.jpg";
 import customerbanner from "../../assets/customerbanner.jpg";
 import electronicsbanner from "../../assets/electronicsbanner.jpg";
 import gamesbanner from "../../assets/gamesbanner.jpg";
@@ -118,10 +117,6 @@ export default function Home() {
       </div>
 
       <Categories />
-
-      <div className="offers-banner">
-        <img src={offerbanner} alt="" />
-      </div>
 
       <ProductsSection />
       {/* <Offerstawqnajah />  */}

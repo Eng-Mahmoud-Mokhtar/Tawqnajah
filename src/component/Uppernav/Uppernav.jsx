@@ -38,8 +38,6 @@ export default function UpperNav({ isSeller = false }) {
             <i className="fa fa-user tn-nav-icon"></i>
           </Link>
         </div>
-
-
       </div>
     </div>
   );

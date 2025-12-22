@@ -100,6 +100,19 @@
   gap: 14px;
 }
 
+/* Keep the CTA row aligned with the text edge on all breakpoints */
+.products-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* RTL: keep items hugging the right edge */
+  gap: 14px;
+  width: 100%;
+}
+
+.products-info > * {
+  flex: 0 0 auto;
+}
+
 /* new wrapper to force a consistent right for all hero children */
 .hero-content {
   width: 100%;
@@ -155,6 +168,24 @@
 
 /* SMALL SCREENS: match large screen layout with smaller sizes */
 @media (max-width: 767px) {
+  .hero-right {
+    right: 16px;
+    left: 16px;
+    width: auto;
+    max-width: none;
+  }
+
+  .products-info {
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-wrap: wrap;
+  }
+
+  .products-info .customerbtn {
+    width: auto;
+    max-width: 100%;
+  }
+
   .hero-content {
     max-width: 92%;
     align-items: flex-start;
@@ -298,7 +329,7 @@
   display: flex;
   width: 100%;
   gap: 25px;
-  align-items: start;
+  align-items: center; /* center the rating circles vertically with the text */
   justify-content: start;
   margin-top: 30px;
 }
@@ -306,14 +337,16 @@
 /* Avatar stack */
 .icons-stack {
   display: flex;
-  align-items: start;
+  align-items: center; /* keep avatars vertically centered */
   position: relative;
 }
 .icons-stack img {
   width: 50px;
+  height: 50px;
+  object-fit: cover;
   border-radius: 50%;
   border: 3px solid #fff;
-  margin-left: -5px;
+  margin-left: -12px; /* stronger overlap for a neat stacked look */
 }
 
 /* ORDER */
@@ -338,7 +371,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: -15px;
+  margin-left: -12px;
 }
 
 /* ===================== SLIDER ARROWS ===================== */
@@ -371,19 +404,7 @@
 .slide-arrow.left {
   left: 20px;
 }
-.offers-banner {
-  width: 100%;
-  height: 360px;
-  overflow: hidden;
-  border-radius: 2px;
-}
 
-.offers-banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* يمنع البكسلة والتمدد */
-  display: block;
-}
 
 .products-info {
   width: 100%;
@@ -394,14 +415,33 @@
   gap: 13px;
 }
 
+/* Keep the CTA group aligned inside the hero banner.
+   Home.css defines .products-info multiple times in different sections/breakpoints,
+   so we override it in a scoped way to prevent the button from drifting/centering. */
+.hero-right .products-info {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 13px;
+  flex-wrap: wrap;
+}
+
 /* small screens adjustments */
 @media (max-width: 767px) {
   .hero-container { height: 65vh; }
   .hero-heading { font-size: 20px; }
 
   .hero-right { padding: 20px; }
-  .products-info { gap: 12px; flex-direction: row; justify-content: center; align-items: center; }
-  .products-info .customerbtn { width: auto; min-width: 150px; }
+
+  /* On mobile, keep CTA aligned with the hero text (not centered). */
+  .hero-right .products-info {
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  .hero-right .products-info .customerbtn { width: auto; min-width: 150px; }
   .btn-text { font-size: 16px; }
   .web-order { font-size: 16px; margin-bottom: 20px; }
   .home-rating { margin-top: 20px; gap: 15px; text-align: center; }
@@ -455,11 +495,12 @@
     text-align: center;
   }
 
-  .products-info {
-    flex-direction: column;
+  /* Ensure CTA doesn't get centered by generic breakpoint rules */
+  .hero-right .products-info {
+    flex-direction: row;
     gap: 16px;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .products-info .customerbtn { padding: 16px 40px; }
@@ -497,9 +538,7 @@
 
 
 
-  .products-info {
-    flex-direction: row;
-  }
+  .hero-right .products-info { flex-direction: row; }
 }
 
 @media (min-width: 1440px) {
@@ -597,24 +636,6 @@
   font-weight: 600;
   color: #1d3a77;
   margin: 0;
-}
-
-/* ===================== OFFERS BANNER ===================== */
-
-.offers-banner {
-  width: 100%;
-  height: 360px;
-  margin: 50px auto;
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
-
-.offers-banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
 }
 
 /* ===================== HOME OFFERS SECTION ===================== */
